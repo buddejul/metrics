@@ -26,6 +26,8 @@ function mle(x; lb=1, ub=10)
     return optimize(f, lb, ub).minimizer    
 end
 
+mle_analytic(x) = length(x) / sum(log.(x))
+
 sample = sample_pareto(2, 100)
 mle(sample)
 mle_analytic(sample)
